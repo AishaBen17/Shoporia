@@ -1,6 +1,6 @@
 {
   "name": "shoporia-project",
-  "private": true,
+  "private": false,
   "version": "0.0.0",
   "type": "module",
   "homepage": "https://AishaBen17.github.io/Shoporia",
