@@ -53,7 +53,11 @@ const router = createBrowserRouter([
       { path: "updatepassword", element: <UpdatePassword /> },
     ],
   },
-]);
+],
+{
+  basename: "/Shoporia",
+}
+);
 
 export default function App() {
   return (
@@ -71,4 +75,5 @@ export default function App() {
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
   );
+  
 }
