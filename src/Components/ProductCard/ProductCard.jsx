@@ -12,7 +12,7 @@ export default function ProductCard({ productItem }) {
   const isInWishlist = wishlist.data?.some((item) => item.id === id);
 
   return (
-    <div className="card relative p-2 pb-10 rounded-lg overflow-hidden col-span-4 sm:col-span-4 md:col-span-4 lg:col-span-3 xl:col-span-2 group/card transition-transform duration-300 hover:shadow-primary-300 hover:shadow-lg hover:scale-[1.02]">
+    <div className="card relative p-2 pb-10 rounded-lg overflow-hidden col-span-6 sm:col-span-4 md:col-span-4 lg:col-span-3 xl:col-span-2 group/card transition-transform duration-300 hover:shadow-primary-300 hover:shadow-lg hover:scale-[1.02]">
       <Link to={`/product/${id}`} className="block">
         <div className="relative mb-1 w-[200px] h-[250px] overflow-hidden">
           <img src={imageCover} className="block w-full h-full object-cover" alt={title} />
@@ -23,7 +23,7 @@ export default function ProductCard({ productItem }) {
           )}
         </div>
       </Link>
-      
+
       <div className="flex justify-between items-center">
         <h3 className="text-primary-500 text-sm" data-category={category._id}>
           {category.name}
