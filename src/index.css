@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+body {
+  font-family: 'Poppins', sans-serif;
+
+    background-color: #F5F5F5;
+}
+h1, h2, h3, h4, h5{
+  font-family: "Noto Sans Display", sans-serif;
+  font-weight: 400;
+}
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #8A4F7D #f1f1f1;
+}
+
+@layer components {
+  .btn {
+    @apply w-full  px-5 py-2 rounded-xl hover:bg-primary-500 transition-colors duration-300 delay-0 bg-primary-700 text-white
+  }
+  .form_Control {
+    @apply  border-primary-400  w-full mt-2 outline-none rounded-lg border  border-opacity-50 focus:border-primary-700 focus:ring-2 focus:ring-primary-200 text-sm text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out
+  }
+
+}
