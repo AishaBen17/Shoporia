@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useFormik } from 'formik';
 import { useState } from 'react';
-import { Helmet, HelmetProvider } from 'react-helmet-async';
+import { Helmet } from 'react-helmet';
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 import * as Yup from 'yup';
@@ -44,12 +44,10 @@ export default function VerifyCode() {
 
   return (
     <section className="flex flex-col items-center justify-center min-h-screen px-4 bg-gray-100">
-      <HelmetProvider>
-        <Helmet>
-          <title>Verify Code</title>
-          <meta name="description" content="Verify your reset code" />
-        </Helmet>
-      </HelmetProvider>
+      <Helmet>
+        <title>Verify Code</title>
+        <meta name="description" content="Verify your reset code" />
+      </Helmet>
       <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-md">
         <h1 className="text-xl text-center text-primary-500 mb-4 relative w-fit mx-auto pb-2 ">
           Verification Code

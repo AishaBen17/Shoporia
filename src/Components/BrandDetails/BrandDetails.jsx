@@ -1,10 +1,10 @@
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import {useParams } from 'react-router-dom';
+import {Link, useParams } from 'react-router-dom';
 import Loading from '../../Components/Loading/Loading';
 import ProductCard from '../../Components/ProductCard/ProductCard';
-import { Helmet, HelmetProvider } from 'react-helmet-async';
+import { Helmet} from 'react-helmet';
 
 export default function BrandDetails() {
   const [products, setProducts] = useState([]); 
@@ -77,12 +77,12 @@ export default function BrandDetails() {
         </div>
       ) : (
         <div className="recent-products mb-8 lg:mt-8">
-          <HelmetProvider>
+          
             <Helmet>
               <title>{`${title} Products`}</title>
               <meta name="description" content="Brand Details" />
             </Helmet>
-          </HelmetProvider>
+         
 
           <h1 className="mb-6 text-2xl md:text-3xl font-bold bg-gradient-to-r from-primary-500 to-primary-200 text-white py-3 px-6 rounded-lg shadow-lg">
             {title} Products
@@ -104,7 +104,7 @@ export default function BrandDetails() {
                 <p className="text-secondary-600 mt-2">
                   Try exploring other categories for more great Brands!
                 </p>
-              
+               <Link to="/brands" ><i className="fa-solid fa-rotate-left text-4xl text-primary-500" title="Back to Brands"></i></Link>
               
             </div>
             </div>

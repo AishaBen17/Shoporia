@@ -6,7 +6,7 @@ import { tokenContext } from "../../Context/Token.Context";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
-import { Helmet, HelmetProvider } from "react-helmet-async";
+import { Helmet } from "react-helmet";
 
 export default function Checkout() {
   const [order, setOrder] = useState("cash");
@@ -41,7 +41,9 @@ export default function Checkout() {
           toast.success("Redirecting to payment page...");
           getCartDetails();
           setTimeout(() => { window.location.href = data.session.url; }, 1000);
-        }
+
+        }console.log("Redirect URL:", `${window.location.origin}`);
+
       })
       .catch((err) => toast.error(err.response.data.message))
       .finally(() => { toast.dismiss(toastId); setLoadingOnline(false); });
@@ -63,12 +65,10 @@ export default function Checkout() {
 
   return (
     <section className=" max-w-lg mx-auto p-6 bg-white shadow-md rounded-md mt-15 mb-10">
-      <HelmetProvider>
-        <Helmet>
-          <title>CheckOut</title>
-          <meta name="description" content="Checkout" />
-        </Helmet>
-      </HelmetProvider>
+      <Helmet>
+        <title>CheckOut</title>
+        <meta name="description" content="Checkout" />
+      </Helmet>
       <h1 className="text-3xl font-bold text-center text-primary-600 mb-4"><i className="fa-solid text-5xl fa-map-location-dot text-primary-400"></i> Delivery Address  </h1>
       <form onSubmit={formik.handleSubmit} className="space-y-4">
         <div>
@@ -130,7 +130,7 @@ export default function Checkout() {
             Online <i className="fa-brands fa-cc-visa"></i>
           </button>
         </div>
-       <span className="text-primary-600 font-mono text-sm "><i className="fa-solid fa-circle-info mr-1"></i>Please provide information about the delivery address below and make a payment.</span>
+        <span className="text-primary-600 font-mono text-sm "><i className="fa-solid fa-circle-info mr-1"></i>Please provide information about the delivery address below and make a payment.</span>
       </form>
     </section>
   );

@@ -3,7 +3,7 @@ import CartItem from "../../Components/CarItem/CartItem";
 import { cartContext } from "../../Context/Cart.Context";
 import Loading from "../../Components/Loading/Loading";
 import { Link } from "react-router-dom";
-import { Helmet, HelmetProvider } from "react-helmet-async";
+import { Helmet} from "react-helmet";
 import empty from "../../assets/images/empty-cart.png";
 
 
@@ -16,12 +16,12 @@ export default function Cart() {
 
   return (
     <>
-      <HelmetProvider>
+     
         <Helmet>
           <title>Cart</title>
           <meta name="description" content="Cart" />
         </Helmet>
-      </HelmetProvider>
+      
       {cartData === null ? (
         <div className="flex justify-center items-center py-8">
           <Loading />

@@ -10,22 +10,23 @@ export default function Order({ myorder }) {
           <h2 className="text-sm text-gray-500">Order ID</h2>
           <h3 className="text-lg font-semibold text-gray-900">#{myorder.id}</h3>
         </div>
-        <div className="flex items-center space-x-2">
-          <span
-            className={`px-3 py-1 rounded-full text-white text-sm ${
-              myorder?.isDelivered ? "bg-green-600" : "bg-orange-500"
-            }`}
-          >
-            {myorder?.isDelivered ? "Delivered" : "In Transit"}
-          </span>
-          <span
-            className={`px-3 py-1 rounded-full text-white text-sm ${
-              myorder?.isPaid ? "bg-green-600" : "bg-orange-500"
-            }`}
-          >
-            {myorder?.isPaid ? "Paid" : "Pending Payment"}
-          </span>
-        </div>
+        <div className="flex flex-wrap items-center justify-center gap-2 sm:space-x-2">
+  <span
+    className={`px-3 py-1 rounded-full text-white text-sm ${
+      myorder?.isDelivered ? "bg-green-600" : "bg-orange-500"
+    }`}
+  >
+    {myorder?.isDelivered ? "Delivered" : "In Transit"}
+  </span>
+  <span
+    className={`px-3 py-1 rounded-full text-white text-sm ${
+      myorder?.isPaid ? "bg-green-600" : "bg-orange-500"
+    }`}
+  >
+    {myorder?.isPaid ? "Paid" : "NotPaid"}
+  </span>
+</div>
+
       </header>
 
    

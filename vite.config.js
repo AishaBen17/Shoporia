@@ -3,5 +3,15 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base:"/Shoporia/"
+  base:"/Shoporia/",
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom', 'react-router-dom', 'axios'],
+        },
+      },
+    },
+    chunkSizeWarningLimit: 700, 
+  },
 })

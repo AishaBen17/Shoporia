@@ -5,7 +5,7 @@ import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import { tokenContext } from "../../Context/Token.Context";
-import { Helmet, HelmetProvider } from "react-helmet-async";
+import { Helmet } from "react-helmet";
 import bgImage from "../../assets/images/womanShop.jpg"; 
 
 export default function Login() {
@@ -50,9 +50,9 @@ export default function Login() {
     password: Yup.string()
       .required("Password is required")
       .matches(
-        /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/,
-        "Password must have at least one uppercase letter, one lowercase letter, one number, and one special character"
-      ),
+        /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{6,}$/,
+        "Must include uppercase, lowercase, and number (min 6 chars)"
+      )
   });
 
   const formik = useFormik({
@@ -65,7 +65,7 @@ export default function Login() {
   });
 
   return (
-    <HelmetProvider>
+    <>
       <Helmet>
         <title>Login</title>
         <meta name="description" content="Login Page" />
@@ -145,6 +145,6 @@ export default function Login() {
           </form>
         </div>
       </div>
-    </HelmetProvider>
+   </>
   );
 }

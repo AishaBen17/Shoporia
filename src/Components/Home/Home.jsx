@@ -1,7 +1,7 @@
 import MainSlider from "../../Components/Main-Slider/MainSlider";
 import CategorySlider from "../../Components/CategorySlider/CategorySlider";
 import RecentProducts from "../../Components/RecentProducts/RecentProducts";
-import { Helmet, HelmetProvider } from "react-helmet-async";
+import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 
 
@@ -10,13 +10,13 @@ import { Link } from "react-router-dom";
 export default function Home() {
   return (
     <>
-      <HelmetProvider>
+     
         <Helmet>
           <title>Home</title>
           <meta name="description" content="Home" />
           <meta name="keywords" content="Home Shoporia ECommerce React-Project  " />
         </Helmet>
-      </HelmetProvider>
+  
       <MainSlider />
       <CategorySlider />
       <RecentProducts limit={12} />  

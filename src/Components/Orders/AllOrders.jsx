@@ -5,7 +5,7 @@ import Order from '../../Components/Order/Order';
 import { tokenContext } from '../../Context/Token.Context';
 import Loading from '../../Components/Loading/Loading';
 import { useQuery } from '@tanstack/react-query';
-import { Helmet, HelmetProvider } from 'react-helmet-async';
+import { Helmet } from 'react-helmet';
 
 export default function AllOrders() {
   const { token } = useContext(tokenContext);
@@ -34,12 +34,10 @@ export default function AllOrders() {
 
   return (
     <section className="min-h-screen bg-gray-100 py-10 px-4">
-      <HelmetProvider>
         <Helmet>
           <title>Orders</title>
           <meta name="description" content="Orders" />
         </Helmet>
-      </HelmetProvider>
       <div className="max-w-6xl mx-auto bg-white p-6 rounded-lg shadow-md">
         <h1 className="btn text-2xl font-bold text-center mb-6 relative w-fit mx-auto">
           My Orders

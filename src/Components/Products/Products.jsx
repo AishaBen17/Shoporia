@@ -3,7 +3,7 @@ import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 import Loading from "../../Components/Loading/Loading";
 import ProductCard from "../../Components/ProductCard/ProductCard";
-import { Helmet, HelmetProvider } from "react-helmet-async";
+import { Helmet } from "react-helmet";
 
 export default function Products() {
   const [currentPage, setCurrentPage] = useState(1);
@@ -36,12 +36,12 @@ export default function Products() {
 
   return (
     <>
-      <HelmetProvider>
+     
         <Helmet>
           <title>Products</title>
           <meta name="description" content="Products" />
         </Helmet>
-      </HelmetProvider>
+   
 
       <div className=" mb-8 lg:mt-8">
       <h1 className="mb-6 text-2xl md:text-3xl font-bold bg-gradient-to-r from-primary-500 to-primary-200

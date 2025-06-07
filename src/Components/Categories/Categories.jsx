@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 import Loading from "../Loading/Loading";
-import { Helmet, HelmetProvider } from "react-helmet-async";
+import { Helmet } from "react-helmet";
 
 function Categories() {
   const [categories, setCategories] = useState([]);
@@ -30,12 +30,12 @@ function Categories() {
   };
 
   return <>
-    <HelmetProvider>
+   
     <Helmet>
       <title>Categories</title>
       <meta name="description" content="Most popular categories" />
     </Helmet>
-  </HelmetProvider>
+  
 
     <div className="px-4 py-4">
         <h1 className="mb-6 text-2xl md:text-3xl font-bold bg-gradient-to-r from-primary-500 to-primary-200

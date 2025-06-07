@@ -3,7 +3,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import Loading from "../../Components/Loading/Loading";
 import { Link } from "react-router-dom";
-import { Helmet, HelmetProvider } from "react-helmet-async";
+import { Helmet} from "react-helmet";
 
 export default function Brands() {
   const [page, setPage] = useState(1);
@@ -27,12 +27,12 @@ export default function Brands() {
 
   return (
     <>
-      <HelmetProvider>
+     
         <Helmet>
           <title>Brands</title>
           <meta name="description" content="Browse top brands" />
         </Helmet>
-      </HelmetProvider>
+     
 
       <section id="brands" className="py-10 bg-gray-100">
         <div className="container mx-auto px-4">

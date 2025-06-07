@@ -5,7 +5,7 @@ import * as Yup from "yup";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
-import { Helmet, HelmetProvider } from "react-helmet-async";
+import { Helmet } from "react-helmet";
 import signup from "../../assets/images/signup.png"
 
 
@@ -81,12 +81,10 @@ export default function Register() {
 
   return (
     <>
-    <HelmetProvider>
     <Helmet>
       <title>Register</title>
       <meta name="description" content="Register" />
     </Helmet>
-    </HelmetProvider>
     <div className="pt-10 pb-12 bg-gray-50">
   <div className="flex flex-col md:flex-row items-center justify-center w-11/12 md:w-5/6 mx-auto gap-10">
 

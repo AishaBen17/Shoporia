@@ -1,21 +1,24 @@
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Slider from "react-slick";
 import Loading from "../Loading/Loading";
 import { useQuery } from "@tanstack/react-query";
 
-async function getAllCategories() {
-  const option = {
-    method: "GET",
-    url: "https://ecommerce.routemisr.com/api/v1/categories",
-  };
 
-  const response = await axios.request(option);
-  console.log("API Response:", response.data); 
-  return response.data.data || []; 
+async function getAllCategories() {
+  try {
+    const response = await axios.get("https://ecommerce.routemisr.com/api/v1/categories");
+    console.log("API Response:", response.data);
+    return response.data.data || [];
+  } catch (error) {
+    console.error("Error fetching categories:", error.message);
+    return []; 
+  }
 }
 
+
 export default function CategorySlider() {
+  const navigate = useNavigate();
   const { data: categories = [], isLoading } = useQuery({
     queryKey: ["categories"],
     queryFn: getAllCategories,
@@ -25,6 +28,9 @@ export default function CategorySlider() {
   if (isLoading) {
     return <Loading />;
   }
+  const handleCategoryClick = (id) => {
+    navigate(`/CategoryDetails/${id}`);
+  };
 
   const settings = {
     infinite: true,
@@ -50,7 +56,11 @@ export default function CategorySlider() {
         <Slider {...settings}>
           {categories.map((category) => (
             <div key={category._id} className="cursor-pointer">
-              <Link to={`/categories/${category._id}`}>
+              <div 
+               key={category._id}
+               className="cursor-pointer"
+               onClick={() => handleCategoryClick(category._id)}
+              >
                 <img
                   loading="lazy"
                   src={category.image}
@@ -58,7 +68,7 @@ export default function CategorySlider() {
                   className="w-full h-[200px] object-cover"
                 />
                 <h2 className="text-md text-center mt-3 ml-2 text-primary-600">{category.name}</h2>
-              </Link>
+              </div>
             </div>
           ))}
         </Slider>

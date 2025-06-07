@@ -10,7 +10,7 @@ import ImageGallery from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
 import { useQuery } from "@tanstack/react-query";
 import { wishlistContext } from "../../Context/wishlist.Context";
-import { Helmet, HelmetProvider } from "react-helmet-async";
+import { Helmet } from "react-helmet";
 import toast from "react-hot-toast";
 import axios from "axios";
 
@@ -82,12 +82,12 @@ export default function ProductDetails() {
 
   return (
     <div className="product-details-page pb-8">
-      <HelmetProvider>
+     
         <Helmet>
           <title>{product?.title || "Product Details"}</title>
           <meta name="description" content={`Product Details of ${product?.title}`} />
         </Helmet>
-      </HelmetProvider>
+      
 
       {product ? (
         <div className="product-details flex flex-col lg:flex-row gap-10 justify-center items-center">

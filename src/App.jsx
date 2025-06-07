@@ -12,7 +12,6 @@ import TokenContextProvider from "./Context/Token.Context";
 import { CartProvider } from "./Context/Cart.Context";
 import ProductDetails from "./Components/ProductDetails/ProductDetails";
 import Checkout from "./Components/Checkout/Checkout";
-import AllOrders from "./Components/Orders/AllOrders";
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import CategoryDetails from "./Components/CategoryDetails/CategoryDetails";
@@ -25,6 +24,7 @@ import UpdatePassword from "./Components/UpdatePassword/UpdatePassword";
 import { WishlistProvider } from ".//Context/wishlist.Context";
 import WishlistPage from "./Components/WishlistPage/WishlistPage";
 import ScrollToTop from "./Components/ScrollToTop/ScrollToTop";
+import AllOrders from "./Components/Orders/AllOrders";
 
 const reactQuery = new QueryClient();
 

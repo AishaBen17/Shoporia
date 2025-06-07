@@ -3,7 +3,7 @@ import { wishlistContext } from '../../Context/wishlist.Context'
 import ProductCard from '../../Components/ProductCard/ProductCard'
 import Loading from '../../Components/Loading/Loading'
 import { Link } from 'react-router-dom'
-import { Helmet, HelmetProvider } from 'react-helmet-async'
+import { Helmet } from 'react-helmet'
 import CartEmpty from "../../assets/images/no-wish-list.png"
 
 export default function WishlistPage() {
@@ -15,16 +15,14 @@ useEffect(() => {
 
   return (
     wishlist.data && wishlist? <section className='wishlist p-3 mb-6' id='wishlist'>
-      <HelmetProvider>
       <Helmet>
       <title>Wishlist</title>
       <meta name="description" content="Wishlist" />
       </Helmet>
-   </HelmetProvider>
 
     {wishlist.count>0 ? (
      <div className="py-3">
-     {/* Wishlist Header */}
+    
      <div className="flex justify-between items-center flex-col lg:flex-row">
        <h1 className="text-3xl font-bold text-primary-500">
          My Wishlist <i className="fa-solid fa-heart text-red-700"></i>
@@ -36,7 +34,7 @@ useEffect(() => {
        </span>
      </div>
  
-     {/* Wishlist Items */}
+ 
      <div className="grid grid-cols-12 gap-6 md:gap-8 mt-8">
        {wishlist.data.map((product) => (
          <ProductCard key={product.id} productItem={product} />
