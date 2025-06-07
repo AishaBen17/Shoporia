@@ -57,14 +57,14 @@ export default function Navbar() {
         <div className="flex items-center gap-6">
           <Link to="/cart" className="relative">
             <i className="fa-solid fa-cart-shopping text-xl text-primary-500"></i>
-            <div className="absolute -top-2 -right-2 bg-gray-300 text-primary-800  flex items-center justify-center text-sm">
+            <div className="absolute -top-2 -right-2 bg-gray-300text-primary-800  flex items-center justify-center text-sm">
               {cartData?.numOfCartItems ?? <i className="fa-solid "></i>}
             </div>
           </Link>
 
           <Link to="/wishlist" className="relative">
             <i className="fa-solid fa-heart text-xl text-danger-700"></i>
-            <div className="absolute -top-2 -right-2 bg-gray-300 text-primary-800  flex items-center justify-center text-sm">
+            <div className="absolute -top-2 -right-2 text-primary-800  flex items-center justify-center text-sm">
               {wishlist.count >= 0 ? wishlist.count : <i className="fa-solid "></i>}
             </div>
           </Link>
