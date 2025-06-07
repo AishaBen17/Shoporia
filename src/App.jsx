@@ -54,9 +54,7 @@ const router = createBrowserRouter([
     ],
   },
 ],
-{
-  basename: "/Shoporia",
-}
+
 );
 
 export default function App() {
